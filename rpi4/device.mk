@@ -41,5 +41,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_VENDOR_PROPERTIES +=    \
     ro.hardware.vulkan=broadcom \
 
+PRODUCT_CHARACTERISTICS := tablet
+
+# Enable extendrom
+$(call inherit-product-if-exists, vendor/extendrom/config/common.mk)
+
 # It is the only way to set ro.hwui.use_vulkan=true
 #TARGET_USES_VULKAN = true
